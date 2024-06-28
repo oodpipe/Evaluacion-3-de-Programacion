@@ -1,4 +1,4 @@
-#1.	Asignar saldos aleatorios: Generar saldos aleatorios para 10 clientes. '''''OK''''''
+#1.	Asignar saldos aleatorios: Generar saldos aleatorios para 10 clientes.
 #2.	Clasificar saldos: Mostrar los saldos clasificados en tres rangos específicos.
 #3.	Ver estadísticas: Calcular y mostrar estadísticas avanzadas sobre los saldos.
    #a.	Saldo más alto
@@ -31,3 +31,26 @@ def clasificar_saldos(saldos):
             altos.append(saldo) #lista de lso de altoss 7k o mas
     
     return bajos, medios, altos
+
+
+def calcular_maximo(lista):  #maximo de la listaaa
+    maximo = lista[0]
+    for elemento in lista[1:]:
+        if elemento > maximo:
+            maximo = elemento
+    return maximo
+
+
+def calcular_minimo(lista): #calcula el primero o el minimo de lalista de appends
+    minimo = lista[0]
+    for elemento in lista[1:]:
+        if elemento < minimo:
+            minimo = elemento
+    return minimo
+
+
+def calcular_promedio(lista): #funcion para sacar el promedio de la lista ocupo el 'len' para saque el promedio de la iteracion
+    suma = sum(lista)
+    promedio = suma / len(lista)
+    return promedio
+

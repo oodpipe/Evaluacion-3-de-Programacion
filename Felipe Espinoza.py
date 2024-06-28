@@ -60,3 +60,22 @@ def calcular_media_geometrica(lista): #ocupe statistics proporciona una función
     media_geometrica = statistics.geometric_mean(lista)
     return media_geometrica
 
+
+def generar_reporte_saldos(saldos, archivo_csv):
+    deduccion_1 = 100  #unad educcion
+    deduccion_2 = 50   #una deduccion
+    saldos_netos = []
+
+    
+    for saldo in saldos: #calculo saldo neto y lo pongo en saldo_neto
+        saldo_neto = saldo - deduccion_1 - deduccion_2
+        saldos_netos.append(saldo_neto)
+
+    
+    with open(archivo_csv, 'w', newline='') as file: #escribo datos en archivo csv
+        writer = csv.writer(file)
+        writer.writerow(['Cliente', 'Saldo', 'Deducción 1', 'Deducción 2', 'Saldo Neto'])
+        for i, saldo in enumerate(saldos):
+            writer.writerow([f'Cliente {i+1}', saldo, deduccion_1, deduccion_2, saldos_netos[i]])
+
+    print(f"Reporte generado y guardado en {archivo_csv}.")

@@ -7,6 +7,7 @@
    #d.	Media geométrica.
 #4.	Reporte de saldos: Generar un reporte detallado de saldos con deducciones por diferentes conceptos y saldo neto, y exportar a un archivo CSV
 
+import csv
 import random
 
 #aca se genera saldos al azar 
@@ -78,4 +79,61 @@ def generar_reporte_saldos(saldos, archivo_csv):
         for i, saldo in enumerate(saldos):
             writer.writerow([f'Cliente {i+1}', saldo, deduccion_1, deduccion_2, saldos_netos[i]])
 
-    print(f"Reporte generado y guardado en {archivo_csv}.")
+    print(f"Reporte generado y guardado en {archivo_csv}. =) ")
+
+
+
+ #MENU DE USUARIO
+
+print("\n*** Menú ***")
+print("1. Generar saldos aleatorios ")
+print("2. Clasificar  saldos ")
+print("3. Ver estadísticas ")
+print("4. Generar reporte de saldos ")
+print("5. Salir ")
+
+
+def manejar_opcion(opcion): #dejo q el usuario escoga
+    if opcion == '1':
+        saldos = generar_saldos_aleatorios()
+        print("Saldos aleatorios generados:  ")
+        print(saldos)
+    elif opcion == '2':
+        bajos, medios, altos = clasificar_saldos(saldos)
+        print("Saldos clasificados: ")
+        print(f"Bajos: {bajos} ")
+        print(f"Medios: {medios} ")
+        print(f"Altos: {altos} ")
+    elif opcion == '3':
+        maximo = calcular_maximo(saldos)
+        minimo = calcular_minimo(saldos)
+        promedio = calcular_promedio(saldos)
+        media_geom = calcular_media_geometrica(saldos)
+        print("Estadísticas de saldos: ")
+        print(f"Saldo más alto: {maximo} ")
+        print(f"Saldo más bajo: {minimo} ")
+        print(f"Saldo promedio: {promedio} ")
+        print(f"Media geométrica: {media_geom} ")
+    elif opcion == '4':
+        archivo_csv = 'reporte_saldos.csv'
+        generar_reporte_saldos(saldos, archivo_csv)
+    elif opcion == '5':
+        print("¡Hasta luego!, que tenga buen dia ")
+        exit()
+    else:
+        print("Opción inválida. Por favor selecciona una opción válida del menú.")
+
+if __name__ == "__main__":
+    saldos = []
+    
+    while True:
+        mostrar_menu()
+        opcion = input("Selecciona una opción del menú (1-5): ")
+        manejar_opcion(opcion)
+        
+print('menu ')
+
+PermissionErrorsadas
+f
+asfsa
+fsafaf

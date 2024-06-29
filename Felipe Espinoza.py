@@ -15,7 +15,7 @@ import statistics
 def generar_saldos_aleatorios(): # se genera aca saldo para los 10 clientes
     saldos = []
     for cliente in range(10):
-        saldo = round(random.uniform(1000, 10000), 2)
+        saldo = round(random.uniform(1000, 10000), 2) #pongo el 2 para redondear
         saldos.append(saldo)
     return saldos
 

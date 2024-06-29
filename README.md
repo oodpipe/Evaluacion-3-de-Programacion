@@ -12,5 +12,5 @@ incluyendo generación de saldos aleatorios, clasificación de saldos, cálculo 
 ### Instrucciones de instalación
 1. Clona el repositorio:
    ```bash
-   git clone 
-   cd 
+   git clone https://github.com/oodpipe/Evaluacion-3-de-Programacion.git
+   cd Felipe Espinoza.py
